@@ -1,6 +1,33 @@
-// OPERAÇÕES MATEMÁTICAS //
+// CRIANDO LISTA DE COMPRAS //
+let items = [];
 
-let n1 = prompt("Digite um número: ")
+for (let item = 0 ; item < 10; item++){
+  let itemName = prompt("Digite o item " + (item + 1) + "° item da lista");
+  items[item] = itemName;
+}
+
+alert(items);
+
+
+// MÉDIA DE UM ESTUDANTE //
+/*let nome = prompt("Digite seu nome: ");
+
+let n1 = prompt("Digite a primeira nota: ");
+let n2 = prompt("Digite a segunda nota: ");
+let n3 = prompt("Digite a terceira nota: ");
+
+let media = (Number(n1) + Number(n2) + Number(n3)) / 3
+media = media.toFixed(2)
+
+if(media > 6){
+  alert("Parabéns, " + nome + "! Sua média foi: " + media);
+} else{
+  alert("Tente novamente, " + nome + "! Sua média foi: " + media);
+}*/
+
+
+// OPERAÇÕES MATEMÁTICAS //
+/*let n1 = prompt("Digite um número: ")
 let n2 = prompt("Digite outro número: ") //capturando em string
 
 n1 = Number(n1); //convertendo de string para number
@@ -16,7 +43,7 @@ alert('Soma: ' + sum)
 alert('Subtração: ' + sub)
 alert('Multiplicação: ' + mult)
 alert('Divisão: ' + div)
-alert('Resto da Divisão: ' + restDiv)
+alert('Resto da Divisão: ' + restDiv)*/
 
 
 // SOMAR DOIS NÚMEROS //
