@@ -1,12 +1,29 @@
+// JOGO DA ADIVINHAÇÃO //
+let number = prompt("Advinhe o número que estou pensando? Está entre 0 e 10"); 
+const randomNumber = Math.round(Math.random() * 10); //constante para não mudar mais o num gerado
+let totalTentativas = 1;
+
+while(randomNumber != number){//enquanto diferente de 
+  number = prompt("Erro, tente novamente!")
+  totalTentativas++;
+}
+
+if(randomNumber == 1){
+  alert("Parabéns! O número que eu estava pensando era: " + number + ". Você advinhou o número em " + totalTentativas + " tentativa")
+} else {
+  alert("Parabéns! O número que eu estava pensando era: " + number +  ". Você advinhou o número em " + totalTentativas + " tentativas")
+}
+
+
 // CRIANDO LISTA DE COMPRAS //
-let items = [];
+/*let items = [];
 
 for (let item = 0 ; item < 10; item++){
   let itemName = prompt("Digite o item " + (item + 1) + "° item da lista");
   items[item] = itemName;
 }
 
-alert(items);
+alert(items);*/
 
 
 // MÉDIA DE UM ESTUDANTE //
