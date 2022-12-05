@@ -1,5 +1,42 @@
+/////////////////////
+// MENU DE OPÇÕES //
+let option
+let items = []
+
+while(option != 3) {
+  option =  Number(prompt(`
+    Olá usuário! Digite o número da opção desejada
+    
+    1. Cadastrar um item na lista
+    2. Mostrar itens cadastrados
+    3. Sair do programa
+  `))
+  
+  
+  if(option == 1) {
+    let item = prompt("Digite o nome do item")
+    items.push(item) 
+  }
+  
+  else if (option == 2) {
+  
+    if(items.length == 0) {
+      alert("Não existem itens cadastrados")
+    } else {
+      alert(items)
+    }
+  
+  } else {
+    alert("Tchau")
+  }
+  
+  console.log(option, items)
+
+}
+
+//////////////////////////
 // JOGO DA ADIVINHAÇÃO //
-let number = prompt("Advinhe o número que estou pensando? Está entre 0 e 10"); 
+/*let number = prompt("Advinhe o número que estou pensando? Está entre 0 e 10"); 
 const randomNumber = Math.round(Math.random() * 10); //constante para não mudar mais o num gerado
 let totalTentativas = 1;
 
@@ -12,9 +49,9 @@ if(randomNumber == 1){
   alert("Parabéns! O número que eu estava pensando era: " + number + ". Você advinhou o número em " + totalTentativas + " tentativa")
 } else {
   alert("Parabéns! O número que eu estava pensando era: " + number +  ". Você advinhou o número em " + totalTentativas + " tentativas")
-}
+}*/
 
-
+///////////////////////////////
 // CRIANDO LISTA DE COMPRAS //
 /*let items = [];
 
@@ -25,7 +62,7 @@ for (let item = 0 ; item < 10; item++){
 
 alert(items);*/
 
-
+///////////////////////////////
 // MÉDIA DE UM ESTUDANTE //
 /*let nome = prompt("Digite seu nome: ");
 
@@ -42,7 +79,7 @@ if(media > 6){
   alert("Tente novamente, " + nome + "! Sua média foi: " + media);
 }*/
 
-
+////////////////////////////
 // OPERAÇÕES MATEMÁTICAS //
 /*let n1 = prompt("Digite um número: ")
 let n2 = prompt("Digite outro número: ") //capturando em string
@@ -62,7 +99,7 @@ alert('Multiplicação: ' + mult)
 alert('Divisão: ' + div)
 alert('Resto da Divisão: ' + restDiv)*/
 
-
+////////////////////////////
 // SOMAR DOIS NÚMEROS //
 /*let n1 = prompt("Digite o número 1: "); 
 let n2 = prompt("Digite o número 2: ");
