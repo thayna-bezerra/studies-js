@@ -99,3 +99,7 @@ h2 {
 .screen2 button {
   border-radius: 0.4rem;
 }
+
+input:invalid{
+  border: 2px solid #FF1010;
+}

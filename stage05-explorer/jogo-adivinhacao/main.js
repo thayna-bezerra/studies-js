@@ -1,37 +1,51 @@
+const btnTry = document.querySelector("#btnTry")
+const btnReset = document.querySelector("#btnReset")
+
 const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
 
-const randomNumber = Math.round(Math.random() * 10);
+let randomNumber = Math.round(Math.random() * 10);
 let totalAttempts = 1;
 
-//função callback
+//Eventos
+btnTry.addEventListener('click', handleTryClick)
+btnReset.addEventListener('click', handleResetClick)
+
+document.addEventListener('keydown', pressEnter)
+
+//Funções callback
 function handleTryClick(event){
   event.preventDefault() //nao enviar o form (n faça o padrao)
 
-  console.log(randomNumber);
   const inputNumber = document.querySelector("#inputNumber")
+  
+  if (Number(inputNumber.value) < 0 || Number(inputNumber.value) > 10 || (!Number(inputNumber.value) && Number(inputNumber.value)!=0)) {
+    alert("Por favor insira um número de 0 a 10!")
+  }
 
   if(Number(inputNumber.value) == randomNumber){
-    screen1.classList.add("hide")
-    screen2.classList.remove("hide")
+    toggleScreen();
     
-    document
-      .querySelector(".screen2 h2")
-      .innerText = `Acertou em ${totalAttempts} tentativas`
+    screen2.querySelector("h2").innerText = `Acertou em ${totalAttempts} tentativas`
   }
   
   inputNumber.value = "";
   totalAttempts++;
 }
 
-//Eventos
-const btnTry = document.querySelector("#btnTry")
-const btnReset = document.querySelector("#btnReset")
-
-btnTry.addEventListener('click', handleTryClick)
-btnReset.addEventListener('click', function(){
-  screen1.classList.remove("hide")
-  screen2.classList.add("hide")
-
+function handleResetClick(){
+  toggleScreen();
   totalAttempts = 1;
-})
+  randomNumber = Math.round(Math.random() * 10);
+}
+
+function toggleScreen(){
+  screen1.classList.toggle("hide")
+  screen2.classList.toggle("hide")
+}
+
+function pressEnter(event){
+  if(event.key == 'Enter' && screen1.classList.contains('hide')){
+    handleResetClick();
+  }
+}
