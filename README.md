@@ -2,7 +2,7 @@
 
 <h3> stage05-explorer/jogo-adivinhacao </h3>
 
-![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/58120519/209866080-908cd6b9-93e9-483a-a669-9c9c8c14cef7.gif)
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/58120519/209866832-2d19f918-407b-43f9-9b7d-b686c6b8e2dd.gif)
 
 
 <h3> stage05-explorer/projeto-imc </h3>
