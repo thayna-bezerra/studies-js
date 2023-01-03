@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -34,9 +34,16 @@
     }
 
     function handle(){
-       const { pathname } = window.location
-       console.log(pathname)
       //const pathname = window.location.pathname >>desestruturando o location>>
+        const { pathname } = window.location
+        const route = routes[pathname] || routes[404]
+        console.log('antes do fetch')
+        fetch(route)
+        .then(data => data.text())
+        .then(html => console.log(html))
+
+        console.log(route)
+
         //const { pathname, href, host, port } = window.location //ir para dentro do location > encontrar o pathname > colocar fora como uma constante
     }
 
