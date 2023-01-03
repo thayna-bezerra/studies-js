@@ -39,14 +39,19 @@
         const route = routes[pathname] || routes[404]
         console.log('antes do fetch')
         fetch(route)
-        .then(data => data.text())
-        .then(html => console.log(html))
+            .then(data => data.text())
+            .then(html => {
+                document.querySelector('#app').innerHTML = html
+            })
 
         console.log(route)
 
         //const { pathname, href, host, port } = window.location //ir para dentro do location > encontrar o pathname > colocar fora como uma constante
     }
 
+      handle()
+
+      window.onpopstate = () => handle(); 
   </script>
 </body>
 </html>
