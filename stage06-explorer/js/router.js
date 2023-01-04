@@ -1,4 +1,4 @@
-class Router{
+export class Router{
   routes = {}
 
   add(routeName, linkPage){
@@ -27,4 +27,4 @@ class Router{
   }
 }
 //const router = new Router() //essa é a instância a qual 'this' se referencia
-export default new Router()
+//export default new Router()
