@@ -16,42 +16,6 @@
 
   <div id="app"></div>
 
-  <script>
-    const routes = {
-      "/": "/pages/home.html",
-      "/about": "/pages/about.html",
-      "/contact": "/pages/contact.html",
-      404: "/pages/404.html",
-    }
-
-    function route(event) {
-      event = event || window.event //verifica se passou o 'event' ou se não passou o evento, pega o evento que está na 'window'
-      event.preventDefault() //não faça o padrão (o padrão é redirecionar para a page que está sendo passada)
-
-      window.history.pushState({}, "", event.target.href) //coloque no histórico que estou mudando de página
-
-      handle()
-    }
-
-    function handle(){
-      //const pathname = window.location.pathname >>desestruturando o location>>
-        const { pathname } = window.location
-        const route = routes[pathname] || routes[404]
-        console.log('antes do fetch')
-        fetch(route)
-            .then(data => data.text())
-            .then(html => {
-                document.querySelector('#app').innerHTML = html
-            })
-
-        console.log(route)
-
-        //const { pathname, href, host, port } = window.location //ir para dentro do location > encontrar o pathname > colocar fora como uma constante
-    }
-
-      handle()
-
-      window.onpopstate = () => handle(); 
-  </script>
+  <script src="js/index.js" type="module"></script>
 </body>
 </html>
